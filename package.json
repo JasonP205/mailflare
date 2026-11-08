@@ -9,7 +9,7 @@
     "start": "vp preview --port 3000",
     "lint": "vp lint .",
     "deploy": "npm run build && npm run deploy:worker",
-    "deploy:worker": "wrangler deploy",
+    "deploy:worker": "node scripts/ensure-queues.mjs && wrangler deploy",
     "deploy:local": "npm run deploy",
     "upload": "npm run build && wrangler versions upload",
     "preview": "npm run build && vp preview --port 3000",
